@@ -5,8 +5,9 @@ import TemperatureGuide from "@/components/TemperatureGuide";
 import PlayActivities from "@/components/PlayActivities";
 import ToyRecommendations from "@/components/ToyRecommendations";
 import { Button } from "@/components/ui/button";
-import { Heart, PawPrint } from "lucide-react";
+import { Heart, PawPrint, Stethoscope } from "lucide-react";
 import petHeroImage from "@/assets/pet-hero.jpg";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   const [selectedPet, setSelectedPet] = useState<Pet | undefined>();
@@ -31,13 +32,19 @@ const Index = () => {
                   Discover personalized feeding guides, temperature tips, play activities, and toy recommendations for your beloved companion.
                 </p>
               </div>
-              <div className="flex gap-4">
+              <div className="flex gap-4 flex-wrap">
                 <Button variant="hero" size="lg" className="shadow-warm">
                   <Heart className="w-5 h-5" />
                   Start Pet Care Journey
                 </Button>
                 <Button variant="outline" size="lg">
                   Learn More
+                </Button>
+                <Button asChild variant="secondary" size="lg">
+                  <Link to="/contact">
+                    <Stethoscope className="w-5 h-5" />
+                    Contact a Vet
+                  </Link>
                 </Button>
               </div>
             </div>
